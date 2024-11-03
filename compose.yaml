@@ -3,10 +3,13 @@ services:
     image: public.ecr.aws/zinclabs/openobserve:latest
     ports:
       - 5080:5080
+      - 514:514
     volumes:
       - ./data:/data
     environment:
       - ZO_DATA_DIR=/data
       - ZO_ROOT_USER_EMAIL=$ZO_ROOT_USER_EMAIL
       - ZO_ROOT_USER_PASSWORD=$ZO_ROOT_USER_PASSWORD
+      - ZO_TCP_PORT=514
+      - ZO_UDP_PORT=514
     restart: always
