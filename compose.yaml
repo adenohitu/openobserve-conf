@@ -4,6 +4,7 @@ services:
     ports:
       - 5080:5080
       - 514:514
+      - 514:514/udp
     volumes:
       - ./data:/data
     environment:
